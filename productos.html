@@ -6,268 +6,165 @@
     <title>Glamour & Citas - Productos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            background-color: #f5f5f5;
-            margin: 0;
-        }
-        .header {
-            background-color: gold;
-            padding: 20px;
-        }
-        .navbar a {
-            color: black;
-            margin: 10px;
-        }
-        .content-wrapper {
-            width: 800px;
-            margin: 20px auto;
-        }
-        .seccion-info {
-            background-color: white;
-            padding: 20px;
-            margin: 20px 0;
-            border: 2px solid gold;
-        }
-        .seccion-info h2 {
-            color: gold;
-        }
-        .categoria-productos h3 {
-            color: gold;
-        }
-        .producto-card {
-            background-color: white;
-            border: 1px solid gold;
-            margin: 10px 0;
-            padding: 10px;
-        }
-        .producto-card img {
-            width: 100%;
-            height: 200px;
-        }
-        .producto-card h3 {
-            color: gold;
-        }
-        .precio {
-            color: gold;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        .modal-contenido {
-            background-color: white;
-            padding: 20px;
-            border: 2px solid gold;
-            width: 300px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .cerrar {
-            float: right;
-            font-size: 20px;
-        }
-        .modal-contenido img {
-            width: 150px;
-            height: 150px;
-        }
-        .modal-contenido h2 {
-            color: gold;
-        }
-        .btn-comprar {
-            background-color: green;
-            color: white;
-            padding: 10px;
-            border: none;
-            width: 100%;
-        }
-        .footer {
-            background-color: gold;
-            padding: 20px;
-            text-align: center;
-        }
-        .red-box {
-            background-color: white;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid black;
-            display: inline-block;
-        }
-        .red-box a {
-            color: black;
-        }
+        body { margin: 0; padding: 0; background: white; color: black; font-family: Arial; }
+        .header { background: #2c2c2c; width: 250px; height: 100vh; position: fixed; left: 0; top: 0; padding: 20px; text-align: center; border-right: 3px solid black; }
+        .header img { display: block; margin: 0 auto 15px auto; width: 120px; height: 120px; object-fit: contain; }
+        .header h1 { display: block; font-size: 20px; margin: 10px 0; color: gold; }
+        .logo-text { font-size: 24px; font-weight: bold; color: gold; display: block; margin: 10px 0; }
+        .navbar { margin-top: 30px; display: block; }
+        .navbar a { color: gold; text-decoration: none; margin: 10px 0; font-weight: bold; display: block; padding: 10px; }
+        .navbar a:hover { background: black; color: white; }
+        .content { margin-left: 290px; padding: 40px; }
+        .caja { background: white; border: 2px solid #2c2c2c; padding: 25px; margin: 20px 0; border-radius: 8px; }
+        .caja h2 { color: gold; margin-top: 0; border-bottom: 2px solid #2c2c2c; padding-bottom: 10px; }
+        .categoria { margin-top: 20px; }
+        .categoria h3 { color: gold; margin: 15px 0 10px 0; font-size: 20px; }
+        .productos-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .producto { background: white; border: 1px solid #2c2c2c; padding: 8px; border-radius: 5px; cursor: pointer; width: calc(50% - 5px); box-sizing: border-box; }
+        .producto:hover { border-color: black; }
+        .producto img { width: 100%; height: 300px; border-radius: 5px; object-fit: cover; }
+        .producto h3 { color: gold; margin: 8px 0 3px 0; font-size: 16px; }
+        .producto p { margin: 3px 0; font-size: 13px; }
+        .precio { color: #2c2c2c; font-weight: bold; font-size: 16px; }
+        .modal { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+        .modal-contenido { background: white; border: 3px solid #2c2c2c; padding: 20px; width: 400px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 8px; }
+        .cerrar { float: right; font-size: 24px; cursor: pointer; color: black; }
+        .cerrar:hover { color: #2c2c2c; }
+        .modal-contenido img { width: 100%; height: 200px; border-radius: 5px; margin: 10px 0; }
+        .modal-contenido h2 { color: gold; margin: 10px 0; }
+        .btn-comprar { background: #2c2c2c; color: white; padding: 12px; border: 2px solid black; width: 100%; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        .btn-comprar:hover { background: black; color: white; }
+        .footer { background: #2c2c2c; padding: 30px; text-align: center; border-top: 3px solid black; margin-top: 50px; margin-left: 0; color: white; clear: both; }
+        .boton { display: inline-block; background: white; border: 2px solid black; padding: 12px 20px; margin: 10px; border-radius: 5px; text-decoration: none; color: black; font-weight: bold; }
+        .boton:hover { background: black; color: white; }
+        .boton i { color: #2c2c2c; margin-right: 8px; }
     </style>
 </head>
 <body>
-
     <header class="header">
-        <div class="logo-container">
-            <img src="img/logo.png" style="height:40px; vertical-align:middle; margin-right:10px;">
-            <span class="logo-text">G&C</span>
-            <h1>Glamour & Citas</h1>
-        </div>
+        <img src="img/logo.png">
+        <span class="logo-text">G&C</span>
+        <h1>Glamour & Citas</h1>
         <nav class="navbar">
             <a href="index.html">Inicio</a>
             <a href="servicios.html">Servicios</a>
             <a href="cita.html">Cita</a>
-            <a href="productos.html" class="active">Productos</a>
+            <a href="productos.html">Productos</a>
         </nav>
     </header>
-
-    <main class="content-wrapper">
-
-        <section id="productos" class="seccion-info">
+    
+    <main class="content">
+        <section class="caja">
             <h2>Productos en Venta</h2>
             <p>Explora nuestra línea de productos premium para el cuidado personal y la belleza.</p>
-        </section>
-
-        <!-- Productos de Peluquería -->
-        <section class="categoria-productos">
-            <h3><i class="fas fa-cut"></i> Productos de Peluquería</h3>
-            <div class="productos-grid">
-                <div class="producto-card" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '45000', 'Productos ventas/peluqueria.jpeg')">
-                    <img src="Productos ventas/peluqueria.jpeg" alt="Producto de Peluquería 1">
-                    <div class="producto-info">
+            
+            <div class="categoria">
+                <h3><i class="fas fa-cut"></i> Productos de Peluquería</h3>
+                <div class="productos-grid">
+                    <div class="producto" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '45000', 'Productos ventas/peluqueria.jpeg')">
+                        <img src="Productos ventas/peluqueria.jpeg" alt="Producto de Peluquería 1">
                         <h3>Producto Peluquería</h3>
                         <p>Producto profesional para el cuidado del cabello</p>
                         <p class="precio">$45.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '48000', 'Productos ventas/peluqueria 2.jpeg')">
-                    <img src="Productos ventas/peluqueria 2.jpeg" alt="Producto de Peluquería 2">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '48000', 'Productos ventas/peluqueria 2.jpeg')">
+                        <img src="Productos ventas/peluqueria 2.jpeg" alt="Producto de Peluquería 2">
                         <h3>Producto Peluquería</h3>
                         <p>Producto profesional para el cuidado del cabello</p>
                         <p class="precio">$48.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '55000', 'Productos ventas/peluqueria 3.jpeg')">
-                    <img src="Productos ventas/peluqueria 3.jpeg" alt="Producto de Peluquería 3">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '55000', 'Productos ventas/peluqueria 3.jpeg')">
+                        <img src="Productos ventas/peluqueria 3.jpeg" alt="Producto de Peluquería 3">
                         <h3>Producto Peluquería</h3>
                         <p>Producto profesional para el cuidado del cabello</p>
                         <p class="precio">$55.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '52000', 'Productos ventas/peluqueria 4.jpeg')">
-                    <img src="Productos ventas/peluqueria 4.jpeg" alt="Producto de Peluquería 4">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '52000', 'Productos ventas/peluqueria 4.jpeg')">
+                        <img src="Productos ventas/peluqueria 4.jpeg" alt="Producto de Peluquería 4">
                         <h3>Producto Peluquería</h3>
                         <p>Producto profesional para el cuidado del cabello</p>
                         <p class="precio">$52.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '60000', 'Productos ventas/peluqueria 5.jpeg')">
-                    <img src="Productos ventas/peluqueria 5.jpeg" alt="Producto de Peluquería 5">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Producto Peluquería', 'Producto profesional para el cuidado del cabello', '60000', 'Productos ventas/peluqueria 5.jpeg')">
+                        <img src="Productos ventas/peluqueria 5.jpeg" alt="Producto de Peluquería 5">
                         <h3>Producto Peluquería</h3>
                         <p>Producto profesional para el cuidado del cabello</p>
                         <p class="precio">$60.000</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Productos de Spa -->
-        <section class="categoria-productos">
-            <h3><i class="fas fa-spa"></i> Productos de Spa</h3>
-            <div class="productos-grid">
-                <div class="producto-card" onclick="abrirModal('Aceite Relajante', 'Aceite esencial para masajes relajantes', '65000', 'Productos ventas/spa.jpeg')">
-                    <img src="Productos ventas/spa.jpeg" alt="Producto de Spa 1">
-                    <div class="producto-info">
+            
+            <div class="categoria">
+                <h3><i class="fas fa-spa"></i> Productos de Spa</h3>
+                <div class="productos-grid">
+                    <div class="producto" onclick="abrirModal('Aceite Relajante', 'Aceite esencial para masajes relajantes', '65000', 'Productos ventas/spa.jpeg')">
+                        <img src="Productos ventas/spa.jpeg" alt="Producto de Spa 1">
                         <h3>Aceite Relajante</h3>
                         <p>Producto relajante para el cuidado corporal</p>
                         <p class="precio">$65.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Crema Corporal Hidratante', 'Crema nutritiva para piel seca', '58000', 'Productos ventas/spa 2.jpeg')">
-                    <img src="Productos ventas/spa 2.jpeg" alt="Producto de Spa 2">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Crema Corporal', 'Crema nutritiva para piel seca', '58000', 'Productos ventas/spa 2.jpeg')">
+                        <img src="Productos ventas/spa 2.jpeg" alt="Producto de Spa 2">
                         <h3>Crema Corporal</h3>
                         <p>Producto relajante para el cuidado corporal</p>
                         <p class="precio">$58.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Exfoliante Corporal', 'Exfoliante natural para renovar la piel', '62000', 'Productos ventas/spa 3.jpeg')">
-                    <img src="Productos ventas/spa 3.jpeg" alt="Producto de Spa 3">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Exfoliante Corporal', 'Exfoliante natural para renovar la piel', '62000', 'Productos ventas/spa 3.jpeg')">
+                        <img src="Productos ventas/spa 3.jpeg" alt="Producto de Spa 3">
                         <h3>Exfoliante Corporal</h3>
                         <p>Producto relajante para el cuidado corporal</p>
                         <p class="precio">$62.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Gel de Ducha Aromático', 'Gel de ducha con fragancia relajante', '42000', 'Productos ventas/spa 4.jpeg')">
-                    <img src="Productos ventas/spa 4.jpeg" alt="Producto de Spa 4">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Gel de Ducha', 'Gel de ducha con fragancia relajante', '42000', 'Productos ventas/spa 4.jpeg')">
+                        <img src="Productos ventas/spa 4.jpeg" alt="Producto de Spa 4">
                         <h3>Gel de Ducha</h3>
                         <p>Producto relajante para el cuidado corporal</p>
                         <p class="precio">$42.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Mascarilla Facial', 'Mascarilla rejuvenecedora para el rostro', '68000', 'Productos ventas/spa 5.jpeg')">
-                    <img src="Productos ventas/spa 5.jpeg" alt="Producto de Spa 5">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Mascarilla Facial', 'Mascarilla rejuvenecedora para el rostro', '68000', 'Productos ventas/spa 5.jpeg')">
+                        <img src="Productos ventas/spa 5.jpeg" alt="Producto de Spa 5">
                         <h3>Mascarilla Facial</h3>
                         <p>Producto relajante para el cuidado corporal</p>
                         <p class="precio">$68.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Set de Tratamiento Spa', 'Set completo de productos para spa en casa', '120000', 'Productos ventas/spa 6.jpg')">
-                    <img src="Productos ventas/spa 6.jpg" alt="Producto de Spa 6">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Set Tratamiento Spa', 'Set completo de productos para spa en casa', '120000', 'Productos ventas/spa 6.jpg')">
+                        <img src="Productos ventas/spa 6.jpg" alt="Producto de Spa 6">
                         <h3>Set Tratamiento Spa</h3>
                         <p>Producto relajante para el cuidado corporal</p>
                         <p class="precio">$120.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Bomba de Baño Relajante', 'Bomba efervescente para baño relajante', '35000', 'Productos ventas/spa 7.jpg')">
-                    <img src="Productos ventas/spa 7.jpg" alt="Producto de Spa 7">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Bomba de Baño', 'Bomba efervescente para baño relajante', '35000', 'Productos ventas/spa 7.jpg')">
+                        <img src="Productos ventas/spa 7.jpg" alt="Producto de Spa 7">
                         <h3>Bomba de Baño</h3>
                         <p>Producto relajante para el cuidado corporal</p>
                         <p class="precio">$35.000</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Productos de Uñas -->
-        <section class="categoria-productos">
-            <h3><i class="fas fa-hand-sparkles"></i> Productos para Uñas</h3>
-            <div class="productos-grid">
-                <div class="producto-card" onclick="abrirModal('Esmalte Profesional', 'Esmalte de larga duración y brillo intenso', '28000', 'Productos ventas/uñas.jpeg')">
-                    <img src="Productos ventas/uñas.jpeg" alt="Producto para Uñas 1">
-                    <div class="producto-info">
+            
+            <div class="categoria">
+                <h3><i class="fas fa-hand-sparkles"></i> Productos para Uñas</h3>
+                <div class="productos-grid">
+                    <div class="producto" onclick="abrirModal('Esmalte Profesional', 'Esmalte de larga duración y brillo intenso', '28000', 'Productos ventas/uñas.jpeg')">
+                        <img src="Productos ventas/uñas.jpeg" alt="Producto para Uñas 1">
                         <h3>Esmalte Profesional</h3>
                         <p>Producto profesional para el cuidado de uñas</p>
                         <p class="precio">$28.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Kit de Manicure', 'Kit completo con herramientas profesionales', '85000', 'Productos ventas/uñas 2.jpeg')">
-                    <img src="Productos ventas/uñas 2.jpeg" alt="Producto para Uñas 2">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Kit de Manicure', 'Kit completo con herramientas profesionales', '85000', 'Productos ventas/uñas 2.jpeg')">
+                        <img src="Productos ventas/uñas 2.jpeg" alt="Producto para Uñas 2">
                         <h3>Kit de Manicure</h3>
                         <p>Producto profesional para el cuidado de uñas</p>
                         <p class="precio">$85.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Base y Top Coat', 'Base y sellador para uñas perfectas', '45000', 'Productos ventas/uñas 3.webp')">
-                    <img src="Productos ventas/uñas 3.webp" alt="Producto para Uñas 3">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Base y Top Coat', 'Base y sellador para uñas perfectas', '45000', 'Productos ventas/uñas 3.webp')">
+                        <img src="Productos ventas/uñas 3.webp" alt="Producto para Uñas 3">
                         <h3>Base y Top Coat</h3>
                         <p>Producto profesional para el cuidado de uñas</p>
                         <p class="precio">$45.000</p>
                     </div>
-                </div>
-                <div class="producto-card" onclick="abrirModal('Esmaltes Variados', 'Pack de esmaltes en diferentes colores', '95000', 'Productos ventas/uñas 4.jpeg')">
-                    <img src="Productos ventas/uñas 4.jpeg" alt="Producto para Uñas 4">
-                    <div class="producto-info">
+                    <div class="producto" onclick="abrirModal('Esmaltes Variados', 'Pack de esmaltes en diferentes colores', '95000', 'Productos ventas/uñas 4.jpeg')">
+                        <img src="Productos ventas/uñas 4.jpeg" alt="Producto para Uñas 4">
                         <h3>Esmaltes Variados</h3>
                         <p>Producto profesional para el cuidado de uñas</p>
                         <p class="precio">$95.000</p>
@@ -275,40 +172,33 @@
                 </div>
             </div>
         </section>
-
-        <!-- Modal de Producto -->
-        <div id="modalProducto" class="modal">
-            <div class="modal-contenido">
-                <span class="cerrar" onclick="cerrarModal()">&times;</span>
-                <img id="modalImagen" src="" alt="Producto">
-                <h2 id="modalTitulo"></h2>
-                <p id="modalDescripcion"></p>
-                <p class="modal-precio" id="modalPrecio"></p>
-                <button class="btn-comprar" onclick="comprarProducto()">
-                    <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
-                </button>
-            </div>
-        </div>
-
     </main>
-
-    <footer class="footer">
-        <div class="redes-sociales">
-            <div class="red-box iluminado">
-                <a href="https://www.instagram.com/jd_fashionyglamuor_?igsh=MXJqYmdjaXphdmx5dA==" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-            </div>
-            <div class="red-box iluminado">
-                <a href="https://wa.me/3169957949?text=Hola,%20me%20gustaría%20agendar%20una%20cita." target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-            </div>
+    
+    <div id="modalProducto" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <img id="modalImagen" src="" alt="Producto">
+            <h2 id="modalTitulo"></h2>
+            <p id="modalDescripcion"></p>
+            <p class="precio" id="modalPrecio"></p>
+            <button class="btn-comprar" onclick="comprarProducto()">
+                <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+            </button>
         </div>
-        <p>&copy; 2025 Glamour & Citas. Todos los derechos reservados.</p>
+    </div>
+    
+    <footer class="footer">
+        <div>
+            <a href="https://www.instagram.com/jd_fashionyglamuor_?igsh=MXJqYmdjaXphdmx5dA==" target="_blank" class="boton">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/3169957949?text=Hola,%20me%20gustaría%20agendar%20una%20cita." target="_blank" class="boton">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+        <p style="margin-top: 20px;">&copy; 2025 Glamour & Citas. Todos los derechos reservados.</p>
     </footer>
-
+    
     <script src="js/main.js"></script>
 </body>
 </html>
-

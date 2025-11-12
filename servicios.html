@@ -6,144 +6,94 @@
     <title>Glamour & Citas - Servicios</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            background-color: #f5f5f5;
-            margin: 0;
-        }
-        .header {
-            background-color: gold;
-            padding: 20px;
-        }
-        .navbar a {
-            color: black;
-            margin: 10px;
-        }
-        .content-wrapper {
-            width: 800px;
-            margin: 20px auto;
-        }
-        .seccion-info {
-            background-color: white;
-            padding: 20px;
-            margin: 20px 0;
-            border: 2px solid gold;
-        }
-        .seccion-info h2 {
-            color: gold;
-        }
-        .servicio-card {
-            background-color: white;
-            margin: 10px 0;
-            border: 1px solid gold;
-            padding: 10px;
-        }
-        .servicio-card img {
-            width: 100%;
-            height: 150px;
-        }
-        .servicio-card h3 {
-            color: gold;
-        }
-        .footer {
-            background-color: gold;
-            padding: 20px;
-            text-align: center;
-        }
-        .red-box {
-            background-color: white;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid black;
-            display: inline-block;
-        }
-        .red-box a {
-            color: black;
-        }
+        body { margin: 0; padding: 0; background: white; color: black; font-family: Arial; }
+        .header { background: #2c2c2c; width: 250px; height: 100vh; position: fixed; left: 0; top: 0; padding: 20px; text-align: center; border-right: 3px solid black; }
+        .header img { display: block; margin: 0 auto 15px auto; width: 120px; height: 120px; object-fit: contain; }
+        .header h1 { display: block; font-size: 20px; margin: 10px 0; color: gold; }
+        .logo-text { font-size: 24px; font-weight: bold; color: gold; display: block; margin: 10px 0; }
+        .navbar { margin-top: 30px; display: block; }
+        .navbar a { color: gold; text-decoration: none; margin: 10px 0; font-weight: bold; display: block; padding: 10px; }
+        .navbar a:hover { background: black; color: white; }
+        .content { margin-left: 290px; padding: 40px; }
+        .caja { background: white; border: 2px solid #2c2c2c; padding: 25px; margin: 20px 0; border-radius: 8px; }
+        .caja h2 { color: gold; margin-top: 0; border-bottom: 2px solid #2c2c2c; padding-bottom: 10px; }
+        #serviciosContainer { margin-top: 20px; }
+        .servicio { background: white; border: 1px solid #2c2c2c; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .servicio img { width: 100%; height: 120px; border-radius: 5px; object-fit: cover; }
+        .servicio h3 { color: gold; margin: 10px 0; font-size: 18px; }
+        .servicio p { margin: 5px 0; font-size: 14px; }
+        .footer { background: #2c2c2c; padding: 30px; text-align: center; border-top: 3px solid black; margin-top: 50px; margin-left: 0; color: white; clear: both; }
+        .boton { display: inline-block; background: white; border: 2px solid black; padding: 12px 20px; margin: 10px; border-radius: 5px; text-decoration: none; color: black; font-weight: bold; }
+        .boton:hover { background: black; color: white; }
+        .boton i { color: #2c2c2c; margin-right: 8px; }
     </style>
 </head>
 <body>
-
     <header class="header">
-        <div class="logo-container">
-            <img src="img/logo.png" style="height:40px; vertical-align:middle; margin-right:10px;">
-            <span class="logo-text">G&C</span>
-            <h1>Glamour & Citas</h1>
-        </div>
+        <img src="img/logo.png">
+        <span class="logo-text">G&C</span>
+        <h1>Glamour & Citas</h1>
         <nav class="navbar">
             <a href="index.html">Inicio</a>
-            <a href="servicios.html" class="active">Servicios</a>
+            <a href="servicios.html">Servicios</a>
             <a href="cita.html">Cita</a>
             <a href="productos.html">Productos</a>
         </nav>
     </header>
-
-    <main class="content-wrapper">
-
-        <section id="menu" class="seccion-info">
+    
+    <main class="content">
+        <section class="caja">
             <h2>Menú de Servicios</h2>
             <p>Elige entre nuestros servicios estrella. Los tiempos y precios son estimados.</p>
-            <p style="font-size:0.85em; color:#888; margin-top:10px;">
-                <input type="file" id="cargarExcel" accept=".xlsx,.xls" style="display:none;" onchange="if(this.files[0]) leerArchivoExcel(this.files[0])">
-                
-            </p>
-
-            <div class="servicios-grid" id="serviciosContainer">
-                <!-- Los servicios se cargarán dinámicamente desde la base de datos Excel -->
-                <article class="servicio-card iluminado">
+            
+            <div id="serviciosContainer">
+                <article class="servicio">
                     <img src="img/corte.jpg" alt="Corte de Cabello Masculino">
                     <h3>Corte de Cabello Masculino</h3>
                     <p>Corte profesional con máquina y tijera, lavado, asesoría de estilo y peinado.</p>
                     <p><strong>30–45 min · $40.000</strong></p>
                 </article>
-
-                <article class="servicio-card iluminado">
+                
+                <article class="servicio">
                     <img src="img/masaje.png" alt="Masaje Relajante">
                     <h3>Masaje Relajante</h3>
                     <p>Masaje descontracturante de cuerpo completo con aromaterapia. Relaja y revitaliza.</p>
                     <p><strong>60 min · $90.000</strong></p>
                 </article>
-
-                <article class="servicio-card iluminado">
+                
+                <article class="servicio">
                     <img src="img/manicure.jpg" alt="Manicure Semipermanente">
                     <h3>Manicure Semipermanente</h3>
                     <p>Limpieza, limado, cutícula y esmaltado gel. Duración prolongada y acabado impecable.</p>
                     <p><strong>50–70 min · $55.000</strong></p>
                 </article>
-
-                <article class="servicio-card iluminado">
+                
+                <article class="servicio">
                     <img src="img/pedicure.jpg" alt="Pedicure Spa">
                     <h3>Pedicure Spa</h3>
                     <p>Exfoliación, hidratación profunda y esmaltado clásico. Tratamiento completo para tus pies.</p>
                     <p><strong>70–90 min · $70.000</strong></p>
                 </article>
             </div>
-
-            <p style="margin-top:16px; font-size:0.95em; color:#ccc;">Los valores pueden variar según longitud de cabello, técnicas avanzadas o requerimientos especiales. Consulta en recepción.</p>
-            <p style="margin-top:8px; font-size:0.85em; color:#888;">Los servicios se cargan desde la base de datos Excel.</p>
+            
+            <p style="margin-top: 20px; font-size: 14px; color: gray;">Los valores pueden variar según longitud de cabello, técnicas avanzadas o requerimientos especiales.</p>
         </section>
-
     </main>
-
+    
     <footer class="footer">
-        <div class="redes-sociales">
-            <div class="red-box iluminado">
-                <a href="https://www.instagram.com/jd_fashionyglamuor_?igsh=MXJqYmdjaXphdmx5dA==" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-            </div>
-            <div class="red-box iluminado">
-                <a href="https://wa.me/3169957949?text=Hola,%20me%20gustaría%20agendar%20una%20cita." target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-            </div>
+        <div>
+            <a href="https://www.instagram.com/jd_fashionyglamuor_?igsh=MXJqYmdjaXphdmx5dA==" target="_blank" class="boton">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/3169957949?text=Hola,%20me%20gustaría%20agendar%20una%20cita." target="_blank" class="boton">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </div>
-        <p>&copy; 2025 Glamour & Citas. Todos los derechos reservados.</p>
+        <p style="margin-top: 20px;">&copy; 2025 Glamour & Citas. Todos los derechos reservados.</p>
     </footer>
-
-    <!-- Librería SheetJS para leer Excel -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/database.js"></script>
 </body>
 </html>
-

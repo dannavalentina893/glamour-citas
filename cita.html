@@ -6,88 +6,47 @@
     <title>Glamour & Citas - Agenda tu Cita</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            background-color: #f5f5f5;
-            margin: 0;
-        }
-        .header {
-            background-color: gold;
-            padding: 20px;
-        }
-        .navbar a {
-            color: black;
-            margin: 10px;
-        }
-        .content-wrapper {
-            width: 800px;
-            margin: 20px auto;
-        }
-        .seccion-cita {
-            background-color: white;
-            padding: 20px;
-            margin: 20px 0;
-            border: 2px solid gold;
-        }
-        .seccion-cita h2 {
-            color: gold;
-        }
-        .form-group {
-            margin: 10px 0;
-        }
-        .formulario-cita input,
-        .formulario-cita select,
-        .formulario-cita textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid gold;
-        }
-        .btn-enviar {
-            background-color: gold;
-            color: black;
-            padding: 10px;
-            border: none;
-            width: 100%;
-        }
-        .footer {
-            background-color: gold;
-            padding: 20px;
-            text-align: center;
-        }
-        .red-box {
-            background-color: white;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid black;
-            display: inline-block;
-        }
-        .red-box a {
-            color: black;
-        }
+        body { margin: 0; padding: 0; background: white; color: black; font-family: Arial; }
+        .header { background: #2c2c2c; width: 250px; height: 100vh; position: fixed; left: 0; top: 0; padding: 20px; text-align: center; border-right: 3px solid black; }
+        .header img { display: block; margin: 0 auto 15px auto; width: 120px; height: 120px; object-fit: contain; }
+        .header h1 { display: block; font-size: 20px; margin: 10px 0; color: gold; }
+        .logo-text { font-size: 24px; font-weight: bold; color: gold; display: block; margin: 10px 0; }
+        .navbar { margin-top: 30px; display: block; }
+        .navbar a { color: gold; text-decoration: none; margin: 10px 0; font-weight: bold; display: block; padding: 10px; }
+        .navbar a:hover { background: black; color: white; }
+        .content { margin-left: 290px; padding: 40px; }
+        .caja { background: white; border: 2px solid #2c2c2c; padding: 25px; margin: 20px 0; border-radius: 8px; }
+        .caja h2 { color: gold; margin-top: 0; border-bottom: 2px solid #2c2c2c; padding-bottom: 10px; }
+        .form-group { margin: 15px 0; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #2c2c2c; border-radius: 5px; }
+        .btn-enviar { background: #2c2c2c; color: white; padding: 12px; border: 2px solid black; width: 100%; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 16px; }
+        .btn-enviar:hover { background: black; color: white; }
+        .footer { background: #2c2c2c; padding: 30px; text-align: center; border-top: 3px solid black; margin-top: 50px; margin-left: 0; color: white; clear: both; }
+        .boton { display: inline-block; background: white; border: 2px solid black; padding: 12px 20px; margin: 10px; border-radius: 5px; text-decoration: none; color: black; font-weight: bold; }
+        .boton:hover { background: black; color: white; }
+        .boton i { color: #2c2c2c; margin-right: 8px; }
     </style>
 </head>
 <body>
-
     <header class="header">
-        <div class="logo-container">
-            <img src="img/logo.png" style="height:40px; vertical-align:middle; margin-right:10px;">
-            <span class="logo-text">G&C</span>
-            <h1>Glamour & Citas</h1>
-        </div>
+        <img src="img/logo.png">
+        <span class="logo-text">G&C</span>
+        <h1>Glamour & Citas</h1>
         <nav class="navbar">
             <a href="index.html">Inicio</a>
             <a href="servicios.html">Servicios</a>
-            <a href="cita.html" class="active">Cita</a>
+            <a href="cita.html">Cita</a>
             <a href="productos.html">Productos</a>
         </nav>
     </header>
-
-    <main class="content-wrapper">
-
-        <section id="cita" class="seccion-cita">
+    
+    <main class="content">
+        <section class="caja">
             <h2>Agenda tu Cita de Lujo</h2>
             <p>Selecciona el servicio que deseas: Corte de Cabello, Masaje o Arreglo de Uñas.</p>
-
-            <form id="formularioCita" class="formulario-cita">
+            
+            <form id="formularioCita">
                 <div class="form-group">
                     <label for="nombre">Nombre Completo:</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -107,7 +66,7 @@
                 <div class="form-group">
                     <label for="hora">Hora:</label>
                     <input type="time" id="hora" name="hora" min="09:00" max="19:00" step="1800" required>
-                    <small style="display:block; margin-top:5px; color:#888; font-size:0.85em;">Horario de atención: 9:00 AM - 7:00 PM</small>
+                    <small style="display:block; margin-top:5px; color:gray; font-size:14px;">Horario de atención: 9:00 AM - 7:00 PM</small>
                 </div>
                 <div class="form-group">
                     <label for="servicio">Servicio Deseado:</label>
@@ -121,43 +80,48 @@
                 </div>
                 <div id="mensajeValidacion" style="margin: 15px 0; padding: 10px; border-radius: 5px; display: none;"></div>
                 <button type="submit" class="btn-enviar">Agendar Cita</button>
-                <p class="nota-envio">La cita quedará registrada en nuestro sistema. Te confirmaremos por WhatsApp.</p>
+                <p style="margin-top: 10px; font-size: 14px; color: gray;">La cita quedará registrada en nuestro sistema. Te confirmaremos por WhatsApp.</p>
             </form>
         </section>
-
     </main>
-
+    
     <footer class="footer">
-        <div class="redes-sociales">
-            <div class="red-box iluminado">
-                <a href="https://www.instagram.com/jd_fashionyglamuor_?igsh=MXJqYmdjaXphdmx5dA==" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-            </div>
-            <div class="red-box iluminado">
-                <a href="https://wa.me/3169957949?text=Hola,%20me%20gustaría%20agendar%20una%20cita." target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-            </div>
+        <div>
+            <a href="https://www.instagram.com/jd_fashionyglamuor_?igsh=MXJqYmdjaXphdmx5dA==" target="_blank" class="boton">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/3169957949?text=Hola,%20me%20gustaría%20agendar%20una%20cita." target="_blank" class="boton">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </div>
-        <p>&copy; 2025 Glamour & Citas. Todos los derechos reservados.</p>
+        <p style="margin-top: 20px;">&copy; 2025 Glamour & Citas. Todos los derechos reservados.</p>
     </footer>
-
-    <!-- Librería SheetJS para leer Excel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/sql-wasm.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/database.js"></script>
-    <script src="js/sql-database.js"></script>
-    <script src="js/citas.js"></script>
+    
     <script>
-        // Configurar fecha mínima (hoy)
+        // Cargar servicios en el select
+        const servicios = [
+            { id: 1, nombre: 'Corte de Cabello Masculino' },
+            { id: 2, nombre: 'Masaje Relajante' },
+            { id: 3, nombre: 'Manicure Semipermanente' },
+            { id: 4, nombre: 'Pedicure Spa' }
+        ];
+        
         document.addEventListener('DOMContentLoaded', function() {
+            // Configurar fecha mínima
             const fechaInput = document.getElementById('fecha');
             if (fechaInput) {
                 const hoy = new Date().toISOString().split('T')[0];
                 fechaInput.setAttribute('min', hoy);
             }
+            
+            // Cargar servicios en el select
+            const selectServicio = document.getElementById('servicio');
+            servicios.forEach(servicio => {
+                const option = document.createElement('option');
+                option.value = servicio.nombre;
+                option.textContent = servicio.nombre;
+                selectServicio.appendChild(option);
+            });
             
             // Manejar envío del formulario
             const formulario = document.getElementById('formularioCita');
@@ -165,52 +129,46 @@
                 formulario.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    const nombre = document.getElementById('nombre').value;
-                    const telefono = document.getElementById('telefono').value;
-                    const email = document.getElementById('email').value;
-                    const fecha = document.getElementById('fecha').value;
-                    const hora = document.getElementById('hora').value;
-                    const servicioId = document.getElementById('servicio').value;
-                    const notas = document.getElementById('deseo').value;
+                    const cita = {
+                        nombre: document.getElementById('nombre').value,
+                        telefono: document.getElementById('telefono').value,
+                        email: document.getElementById('email').value,
+                        fecha: document.getElementById('fecha').value,
+                        hora: document.getElementById('hora').value,
+                        servicio: document.getElementById('servicio').value,
+                        notas: document.getElementById('deseo').value
+                    };
                     
-                    if (!servicioId) {
+                    if (!cita.servicio) {
                         mostrarMensaje('Por favor selecciona un servicio', 'error');
                         return;
                     }
                     
-                    // Guardar automáticamente en segundo plano (sin mostrar mensajes)
-                    guardarNuevaCita({
-                        nombre,
-                        telefono,
-                        email,
-                        fecha,
-                        hora,
-                        servicioId,
-                        notas
-                    }).then(resultado => {
+                    // Enviar al servidor PHP
+                    fetch('/glamour-citas/api/guardar-cita.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(cita)
+                    })
+                    .then(response => response.json())
+                    .then(resultado => {
                         if (resultado.exito) {
-                            // Guardar silenciosamente - sin mostrar mensajes
-                            console.log('✓ Cita guardada automáticamente:', resultado.cita.id);
-                            
-                            // Resetear formulario automáticamente
+                            mostrarMensaje('¡Cita guardada en db.xlsx! ID: ' + resultado.id, 'exito');
                             formulario.reset();
                             
-                            // Enviar por WhatsApp automáticamente (sin interrumpir)
-                            const servicio = window.datosBase?.servicios?.find(s => 
-                                s['ID_Servicio (PK)'] == servicioId || s.ID_Servicio == servicioId
-                            );
-                            const nombreServicio = servicio?.['Nombre_Servicio'] || servicio?.Nombre_Servicio || 'Servicio';
-                            const mensaje = `Hola, he agendado una cita:\n\nNombre: ${nombre}\nServicio: ${nombreServicio}\nFecha: ${fecha}\nHora: ${hora}\n\nID de cita: ${resultado.cita.id}`;
+                            // Abrir WhatsApp
+                            const mensaje = `Hola, he agendado una cita:\n\nNombre: ${cita.nombre}\nServicio: ${cita.servicio}\nFecha: ${cita.fecha}\nHora: ${cita.hora}\n\nID de cita: ${resultado.id}`;
                             const urlWhatsApp = `https://wa.me/3169957949?text=${encodeURIComponent(mensaje)}`;
                             window.open(urlWhatsApp, '_blank');
                         } else {
-                            // Solo mostrar error si algo falla
-                            mostrarMensaje(resultado.mensaje, 'error');
+                            mostrarMensaje('Error: ' + resultado.mensaje, 'error');
                         }
-                    }).catch(error => {
+                    })
+                    .catch(error => {
                         console.error('Error:', error);
-                        // Solo mostrar error si algo falla
-                        mostrarMensaje('Error al guardar la cita. Intenta nuevamente.', 'error');
+                        mostrarMensaje('Error de conexión. Asegúrate de que el servidor esté corriendo.', 'error');
                     });
                 });
             }
@@ -225,12 +183,9 @@
                 div.style.color = tipo === 'exito' ? '#4CAF50' : '#f44336';
                 div.style.border = `1px solid ${tipo === 'exito' ? '#4CAF50' : '#f44336'}`;
                 
-                setTimeout(() => {
-                    div.style.display = 'none';
-                }, 5000);
+                setTimeout(() => { div.style.display = 'none'; }, 5000);
             }
         }
     </script>
 </body>
 </html>
-
