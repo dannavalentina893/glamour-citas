@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fashions & Glamour JD</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/751/751463.png">
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-pink-500">Fashions & Glamour JD</h1>
+      <nav class="space-x-4 hidden md:flex">
+        <a href="#inicio" class="hover:text-pink-500">Inicio</a>
+        <a href="#servicios" class="hover:text-pink-500">Servicios</a>
+        <a href="#precios" class="hover:text-pink-500">Precios</a>
+        <a href="#citas" class="hover:text-pink-500">Citas</a>
+        <a href="#equipo" class="hover:text-pink-500">Equipo</a>
+        <a href="#contacto" class="hover:text-pink-500">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="text-center bg-pink-50 py-16">
+    <h2 class="text-4xl font-bold text-pink-600 mb-4">Tu Transformación Comienza Aquí</h2>
+    <p class="text-lg mb-6">Peluquería ?? | Masajes ????? | Uñas ??</p>
+    <button onclick="document.getElementById('citas').scrollIntoView({behavior:'smooth'})"
+      class="bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600">
+      ¡Agenda tu Cita Ahora!
+    </button>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10 text-pink-600">Nuestros Servicios y Paquetes</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Peluquería -->
+        <div class="border rounded-2xl shadow p-6">
+          <h4 class="text-2xl font-bold mb-4 text-pink-500">Peluquería</h4>
+          <p><strong>Básico:</strong> Corte y Secado Express - $30.000</p>
+          <p class="text-pink-500 font-semibold"><strong>Premium:</strong> Corte, Coloración y Peinado - $65.000 ?</p>
+          <p><strong>VIP:</strong> Transformación Total + Masaje Capilar - $95.000</p>
+        </div>
+        <!-- Masajes -->
+        <div class="border rounded-2xl shadow p-6">
+          <h4 class="text-2xl font-bold mb-4 text-pink-500">Masajes</h4>
+          <p><strong>Rápido:</strong> Espalda 30 min - $40.000</p>
+          <p class="text-pink-500 font-semibold"><strong>Estándar:</strong> Relajación 60 min - $70.000 ?</p>
+          <p><strong>Lujo:</strong> Piedras Calientes 90 min - $100.000</p>
+        </div>
+        <!-- Uñas -->
+        <div class="border rounded-2xl shadow p-6">
+          <h4 class="text-2xl font-bold mb-4 text-pink-500">Uñas</h4>
+          <p><strong>Clásica:</strong> Manicura y Pedicura - $25.000</p>
+          <p class="text-pink-500 font-semibold"><strong>Gel:</strong> Semipermanente - $40.000 ?</p>
+          <p><strong>Spa:</strong> Mascarilla + Exfoliación - $55.000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo" class="bg-pink-50 py-16">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10 text-pink-600">Nuestro Equipo</h3>
+      <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+        
+        <!-- Sebastián -->
+        <div class="bg-white p-6 rounded-xl shadow">
+          <img src="https://via.placeholder.com/150" class="mx-auto rounded-full mb-4" alt="Sebastián Cifuentes">
+          <h4 class="font-bold">Sebastián Cifuentes</h4>
+          <p>Diseñador</p>
+        </div>
+        
+        <!-- Juan Esteban -->
+        <div class="bg-white p-6 rounded-xl shadow">
+          <img src="https://via.placeholder.com/150" class="mx-auto rounded-full mb-4" alt="Juan Esteban Colonia">
+          <h4 class="font-bold">Juan Esteban Colonia</h4>
+          <p>Administrador</p>
+        </div>
+
+        <!-- Dana -->
+        <div class="bg-white p-6 rounded-xl shadow">
+          <img src="https://via.placeholder.com/150" class="mx-auto rounded-full mb-4" alt="Dana Cuellar">
+          <h4 class="font-bold">Dana Cuellar</h4>
+          <p>Atención al Cliente</p>
+        </div>
+
+        <!-- Darío -->
+        <div class="bg-white p-6 rounded-xl shadow">
+          <img src="https://via.placeholder.com/150" class="mx-auto rounded-full mb-4" alt="Darío Martínez">
+          <h4 class="font-bold">Darío Martínez</h4>
+          <p>Programador</p>
+        </div>
+
+        <!-- Valentina -->
+        <div class="bg-white p-6 rounded-xl shadow">
+          <img src="https://via.placeholder.com/150" class="mx-auto rounded-full mb-4" alt="Valentina Molina">
+          <h4 class="font-bold">Valentina Molina</h4>
+          <p>Programadora</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CITAS -->
+  <section id="citas" class="py-16 bg-white">
+    <div class="max-w-md mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6 text-pink-600">Agenda tu Cita</h3>
+      <form id="formCita" class="space-y-4">
+        <select id="servicio" class="w-full border rounded p-2" required>
+          <option value="">Selecciona un servicio</option>
+          <option>Peluquería</option>
+          <option>Masajes</option>
+          <option>Uñas</option>
+        </select>
+        <select id="personal" class="w-full border rounded p-2" required>
+          <option value="">Selecciona el personal</option>
+          <option>Sebastián Cifuentes</option>
+          <option>Juan Esteban Colonia</option>
+          <option>Dana Cuellar</option>
+          <option>Darío Martínez</option>
+          <option>Valentina Molina</option>
+        </select>
+        <input id="fecha" type="date" class="w-full border rounded p-2" required>
+        <input id="hora" type="time" class="w-full border rounded p-2" required>
+        <button type="submit" class="bg-pink-500 text-white px-6 py-2 rounded hover:bg-pink-600">Guardar Cita</button>
+      </form>
+      <p id="msg" class="mt-4 text-green-600 font-semibold hidden">? Cita guardada correctamente.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <footer id="contacto" class="bg-gray-900 text-white py-10">
+    <div class="max-w-6xl mx-auto text-center space-y-3">
+      <p><strong>Teléfono:</strong> +57 310 123 4567</p>
+      <p><strong>Email:</strong> info@serenitysalon.com</p>
+      <p><strong>Dirección:</strong> Carrera 5a #1sur-26, El Cerrito, Valle del Cauca</p>
+      <a href="https://www.google.com/maps?q=Carrera+5a+%231sur-26,+El+Cerrito,+Valle+del+Cauca"
+         target="_blank" class="bg-pink-500 px-4 py-2 rounded inline-block hover:bg-pink-600">Ver en Google Maps</a>
+      <div class="mt-6">
+        <a href="#" class="mx-2 text-pink-400 hover:text-white">Instagram</a>
+        <a href="#" class="mx-2 text-pink-400 hover:text-white">Facebook</a>
+        <a href="https://wa.me/573101234567" class="mx-2 text-pink-400 hover:text-white">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MAPA INTERACTIVO -->
+  <iframe class="w-full h-64 border-0"
+    src="https://www.google.com/maps?q=El+Cerrito+Valle+del+Cauca&output=embed"></iframe>
+
+  <!-- FIREBASE -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    // ?? PEGA AQUÍ TU CONFIGURACIÓN DE FIREBASE
+    const firebaseConfig = {
+      apiKey: "TU_API_KEY",
+      authDomain: "TU_PROJECT_ID.firebaseapp.com",
+      projectId: "TU_PROJECT_ID",
+      storageBucket: "TU_PROJECT_ID.appspot.com",
+      messagingSenderId: "TU_MESSAGING_SENDER_ID",
+      appId: "TU_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById('formCita');
+    const msg = document.getElementById('msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const servicio = document.getElementById('servicio').value;
+      const personal = document.getElementById('personal').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+
+      try {
+        await addDoc(collection(db, "citas"), { servicio, personal, fecha, hora, creado: new Date() });
+        msg.classList.remove('hidden');
+        form.reset();
+      } catch (error) {
+        alert("Error al guardar: " + error);
+      }
+    });
+  </script>
+</body>
+</html>
